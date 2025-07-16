@@ -15,11 +15,11 @@
   background: #ffffff20;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--main-color);
+  background: var(--text-color);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--main-color);
+  background: var(--text-color);
 }
 
 @-moz-document url-prefix() {
@@ -31,7 +31,7 @@
 
 :root {
   --bg-color: #ffffff;
-  --second-bg-color: #e2e2e2;
+  --second-bg-color: #f8f8f8;
   --text-color: rgb(59, 59, 59);
   --main-color: #c300ff;
   --neon-box-shadow: 0 0 0.5rem #c300ff;
@@ -52,8 +52,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 17%;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem 17%;
+  background: var(--bg-color);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -63,15 +63,11 @@ body {
 }
 
 .logo {
-  width: 16rem;
+  width: 15rem;
   color: var(--text-color);
   font-weight: 800;
   cursor: pointer;
   transition: 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.1);
 }
 
 .navbar a {
@@ -85,8 +81,8 @@ body {
 
 .navbar a:hover,
 .navbar a.active {
-  color: #213264;
-  border-bottom: 2px solid #213264;
+  color: black;
+  border-bottom: 2px solid black;
 }
 
 @keyframes navbarSlide {
@@ -122,35 +118,15 @@ section {
   gap: 1rem;
 }
 
-.dropdown {
-  position: relative;
+.heading {
+  text-align: center;
+  font-size: 8rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: #fff;
-  top: 100%;
-  left: 0;
-  min-width: 160px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  border-radius: 7px;
-  list-style: none;
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-.dropdown-menu li {
-  padding: 7px;
-}
-
-.dropdown-menu li a {
-  color: var(--text-color);
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-
